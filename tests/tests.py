@@ -36,4 +36,10 @@ def test_add_edge(testproj):
         testproj.remove_task('dosomething')
     assert 'dosomething' not in testproj.get_tasks()
 
+def test_add_whitespace(testproj):
+    testproj.add_task('dothis')
+    testproj.add_task('dothis\n')
+    testproj.remove_task('dothis')    
+    assert 'dothis' not in testproj.get_tasks()
+
 
